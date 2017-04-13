@@ -1,0 +1,19 @@
+{
+  "name": "data-structures-js",
+  "version": "1.0.0",
+  "description": "Set of data structures in es6",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akallabet/DataStructuresJs.git"
+  },
+  "author": "Akallabeth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akallabet/DataStructuresJs/issues"
+  },
+  "homepage": "https://github.com/Akallabet/DataStructuresJs#readme"
+}
