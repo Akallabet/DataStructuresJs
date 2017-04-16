@@ -1,4 +1,4 @@
-const BSTNode = ({val, left, right, height = {left: 0, right: 0}}) => ({val, left, right, height})
+import BSTNode from './BSTNode'
 
 function BST () {
 	let root, min, max
@@ -7,8 +7,8 @@ function BST () {
     return root
   }
   const err = (message) => console.log(message)
-  const setMin = (node) => {min = (!min || min.val < node.val) min = node}
-  const setMax = (node) => {max = (!max || max.val > node.val) max = node}
+  const setMin = (node) => {min = (!min || min.val < node.val) ? min : node}
+  const setMax = (node) => {max = (!max || max.val > node.val) ? max : node}
   const setHeight = (node, height) => {}
   const insertNode = (node, parent, direction) => {
     parent[direction] = node
@@ -31,7 +31,12 @@ function BST () {
   	insert(BSTNode({val}))
     adjust()
   }
-  return {getRoot : () => root, getMin: () => min, getMax: () => max, insert: insertBSTNode}
+
+	const printInorder = () => {
+
+	}
+
+  return {getRoot : () => root, getMin: () => min, getMax: () => max, insert: insertBSTNode, }
 }
 
 export default BST
