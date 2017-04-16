@@ -9,7 +9,10 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
     preprocessors: {
       // add webpack as preprocessor
-      'src/index.test.js': ['webpack']
+      'src/index.test.js': ['webpack', 'sourcemap']
+    },
+    webpack: {
+      devtool: 'inline-source-map'
     },
     reporters: ['mocha'],
     browsers: ['Chrome'],
@@ -18,7 +21,8 @@ module.exports = function(config) {
       'karma-chai',
       'karma-webpack',
       'karma-mocha-reporter',
-      'karma-chrome-launcher'
+      'karma-chrome-launcher',
+      'karma-sourcemap-loader'
     ]
   });
 };

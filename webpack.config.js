@@ -15,5 +15,6 @@ module.exports = {
         exclude: path.join(__dirname, 'node_modules')
       }
     ]
-  }
+  },
+  devtool: "source-map",
 };
