@@ -6,6 +6,11 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    alias: {
+      utils: path.resolve(__dirname, 'src/utils/utils')
+    }
+  },
   module: {
     rules: [
       {
@@ -16,5 +21,5 @@ module.exports = {
       }
     ]
   },
-  devtool: "source-map",
+  devtool: "inline-source-map",
 };

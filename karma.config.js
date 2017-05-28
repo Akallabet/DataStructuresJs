@@ -1,3 +1,5 @@
+var webpackConfig = require('./webpack.config.js');
+
 module.exports = function(config) {
   config.set({
     // ... normal karma configuration
@@ -11,9 +13,7 @@ module.exports = function(config) {
       // add webpack as preprocessor
       'src/index.test.js': ['webpack', 'sourcemap']
     },
-    webpack: {
-      devtool: 'inline-source-map'
-    },
+    webpack: webpackConfig,
     reporters: ['mocha'],
     browsers: ['Chrome'],
     plugins: [
