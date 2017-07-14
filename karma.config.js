@@ -15,7 +15,7 @@ module.exports = function(config) {
     },
     webpack: webpackConfig,
     reporters: ['mocha'],
-    browsers: ['ChromeNoSandboxHeadless'],
+    browsers: ['Chrome'],
     customLaunchers: {
       ChromeNoSandboxHeadless: {
         base: 'Chrome',
