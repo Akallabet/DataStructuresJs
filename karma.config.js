@@ -15,7 +15,7 @@ module.exports = function(config) {
     },
     webpack: webpackConfig,
     reporters: ['mocha'],
-    browsers: ['Chrome'],
+    browsers: ['ChromeNoSandboxHeadless'],
     customLaunchers: {
       ChromeNoSandboxHeadless: {
         base: 'Chrome',
@@ -26,6 +26,7 @@ module.exports = function(config) {
           '--disable-gpu',
           // Without a remote debugging port, Google Chrome exits immediately.
           ' --remote-debugging-port=9222',
+          '--disable-web-security'
         ],
       },
     },
