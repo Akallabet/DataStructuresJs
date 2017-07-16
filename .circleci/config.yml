@@ -7,8 +7,7 @@ jobs:
   build:
     working_directory: ~/src
     docker:
-      - image: circleci/node:7.10
-      - image: selenium/standalone-chrome:latest
+      - image: circleci/node:7.10-browsers
         env:
           - DISPLAY=:99
           - CHROME_BIN=/usr/bin/google-chrome
