@@ -25,7 +25,7 @@ jobs:
 
       # run tests!
       - run: npm run test:ci
-      - deploy:
+      - run:
         name: Deploy master to Digital Ocean
         command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
