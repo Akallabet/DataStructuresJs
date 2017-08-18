@@ -19,7 +19,7 @@ function BST (key = 'key', compare = defaultCompare) {
 	function adjust () {}
 
 	//Insert operation
-	function insert (node, parent = root) {
+	function _insert (node, parent = root) {
   	if (!root) return createRoot(node)
 		const comparedNodes = compare(node, parent)
 		if (comparedNodes === 0) return node
@@ -35,19 +35,19 @@ function BST (key = 'key', compare = defaultCompare) {
 		if (!Array.isArray(values)) values = [values]
   	values.forEach(({val, ...args}) => {
 			if (!args[key]) err (`You didn't define a key: '${key}'`)
-			else insert(BynaryNode({val, ...args}))
+			else _insert(BynaryNode({val, ...args}))
 		})
     adjust()
   }
 
-	function inOrder (node) {
+	function _inOrder (node) {
 		if (node.left) inOrder(node.left)
 		if (node) data.push(node)
 		if (node.right) inOrder(node.right)
 	}
 	function startInorder () {
 		resetList()
-		inOrder(root)
+		_inOrder(root)
 	}
 
 	function getMin(node = root) {return node.left ? getMin(node.left) : node}

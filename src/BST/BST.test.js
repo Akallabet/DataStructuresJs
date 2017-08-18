@@ -28,7 +28,7 @@ describe('BST', function() {
       expect(bst.data[4].val).to.equal(5)
       expect(bst.data[5].val).to.equal(10)
     })
-    it('should insert the elements as an array', function() {
+    it('should insert an array of elements', function() {
       const sortedInputValues = [...inputValues].sort((a,b) => a.key - b.key)
       bst.insert(inputValues)
       bst.inOrder()
