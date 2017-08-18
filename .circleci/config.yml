@@ -35,7 +35,7 @@ jobs:
           name: Deploy master to Digital Ocean
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh -v akallabeth@178.62.59.76 "cd ${PROJECT_FOLDER};"
+              ssh -v ${DROPLET} "cd ${PROJECT_FOLDER};"
               git checkout master
               git pull
             else
