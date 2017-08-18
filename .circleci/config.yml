@@ -25,11 +25,18 @@ jobs:
 
       # run tests!
       - run: npm run test:ci
-      - run:
+
+      # deployment
+      - run: bash .circleci/setup-droplet.sh
+      - add_ssh_keys:
+          fingerprints:
+            - "b7:97:e8:eb:da:e0:49:1e:2b:c2:5a:ea:79:3f:07:65"
+      - deploy:
           name: Deploy master to Digital Ocean
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh -v akallabeth@178.62.59.76 "cd ~/DataStructuresJs; ./circle_deployer.sh"
+              ssh -v akallabeth@178.62.59.76 "cd ~/DataStructuresJs;"
+              git push master
             else
               echo "Not master branch so not deploying"
             fi
