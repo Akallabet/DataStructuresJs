@@ -29,7 +29,7 @@ jobs:
           name: Deploy master to Digital Ocean
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh -v akallabeth@178.52.69.76 "cd ~/DataStructuresJs; ./circle_deployer.sh"
+              ssh -v akallabeth@178.62.59.76 "cd ~/DataStructuresJs; ./circle_deployer.sh"
             else
               echo "Not master branch so not deploying"
             fi
