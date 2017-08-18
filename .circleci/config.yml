@@ -36,7 +36,8 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               ssh -v akallabeth@178.62.59.76 "cd ~/DataStructuresJs;"
-              git push master
+              git checkout master
+              git pull
             else
               echo "Not master branch so not deploying"
             fi
